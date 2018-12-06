@@ -1,0 +1,39 @@
+
+
+
+elasticsearch:
+  cluster-nodes: hejinyo.cn:9200
+
+
+server:
+  port: 8088
+
+spring:
+  datasource:
+    name: mysql_druid
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://m.hejinyo.cn:3306/jelly?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: TondZUOtzekMmm5rgVwkIm9ufT51AwpqV8buJMfe7EaRwCe6OX59WZ12xRaLX/lvtrkf+GfvoHEmnasMVQhAFg==
+    sql-script-encoding: UTF-8
+    druid:
+      filter.config.enabled: true
+      connection-properties: config.decrypt=true;config.decrypt.key=MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBANAEO1u7chEMZvxO09YCKfvzyZ4HjFm3nkNFwx3YXicvFt79o+EMB4kvs+yF29z/MYVcPTjW5rvo+BPBFlxo6M0CAwEAAQ==
+      initial-size: 1
+      min-idle: 1
+      max-active: 20
+      max-wait: 60000
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: select 'x'
+      test-while-idle: true
+      test-on-borrow: false
+      test-on-return: false
+      pool-prepared-statements: false
+      max-open-prepared-statements: 20
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        reset-enable: false
+        login-username: admin
+        login-password: 123456
