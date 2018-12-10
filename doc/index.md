@@ -26,9 +26,18 @@ vim /etc/elasticsearch/elasticsearch.yml
 
 systemctl start elasticsearch
 
+# 安装ik中文分词插件
 https://github.com/medcl/elasticsearch-analysis-ik
+./usr/share/elasticsearch/bin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.5.1/elasticsearch-analysis-ik-6.5.1.zip
 
-.//usr/share/elasticsearch/bin install https://github.com/medcl/elasticsearch-analysis-ik/releases/download/v6.5.1/elasticsearch-analysis-ik-6.5.1.zip
+# 安装hanlp中文分词插件
+https://github.com/KennFalcon/elasticsearch-analysis-hanlp
+./bin/elasticsearch-plugin install https://github.com/KennFalcon/elasticsearch-analysis-hanlp/releases/download/v6.5.1/elasticsearch-analysis-hanlp-6.5.1.zip
+
+# 安装ik拼音分词插件
+https://github.com/medcl/elasticsearch-analysis-pinyin
+wget https://github.com/medcl/elasticsearch-analysis-pinyin/releases/download/v6.5.1/elasticsearch-analysis-pinyin-6.5.1.zip
+
 
 systemctl restart elasticsearch
 
